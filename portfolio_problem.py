@@ -53,7 +53,6 @@ class PortfolioOptimizationProblem(BaseProblem):
         
         # Read expected returns from the line immediately following the covariance matrix.
         delta = [float(val) for val in lines[nb_stocks+2].split()]
-        print(expected_profit, nb_stocks, sigma, delta)
         return expected_profit, nb_stocks, sigma, delta
     
     def evaluate_solution(self, solution) -> float:
