@@ -42,8 +42,8 @@ class PortfolioOptimizationProblem(BaseProblem):
         # First line: expected profit.
         expected_profit = float(lines[0].split()[0])
         
-        # Assume the number of stocks is on the third nonempty line.
-        nb_stocks = int(lines[2].split()[0])
+        # Assume the number of stocks is on the second nonempty line.
+        nb_stocks = int(lines[1].split()[0])
         
         # Read covariance matrix (rows start at line index 4, for nb_stocks lines).
         sigma = []
