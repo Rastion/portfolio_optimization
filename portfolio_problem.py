@@ -48,11 +48,11 @@ class PortfolioOptimizationProblem(BaseProblem):
         # Read covariance matrix (rows start at line index 4, for nb_stocks lines).
         sigma = []
         for s in range(nb_stocks):
-            row = [float(val) for val in lines[3+s].split()]
+            row = [float(val) for val in lines[2+s].split()]
             sigma.append(row)
         
         # Read expected returns from the line immediately following the covariance matrix.
-        delta = [float(val) for val in lines[nb_stocks+3].split()]
+        delta = [float(val) for val in lines[nb_stocks+2].split()]
         
         return expected_profit, nb_stocks, sigma, delta
     
