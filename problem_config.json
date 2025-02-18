@@ -1,0 +1,39 @@
+{
+    "entry_point": "portfolio_problem:PortfolioOptimizationProblem",
+    "default_params": {
+      "instance_file": "instances/small_01.txt"
+    },
+    "problem_type": "Portfolio Optimization",
+    "description": "This portfolio optimization problem is a simplified version of the Markowitz portfolio selection model. Given a set of stocks with a known covariance (risk) matrix and expected returns, the goal is to decide what proportion of a unit portfolio to invest in each stock. The entire portfolio must be allocated (i.e., the proportions sum to 1), and the overall portfolio profit must be at least a specified expected profit. The objective is to minimize the portfolio risk, computed as the quadratic form x^T Σ x.",
+    "keywords": [
+      "portfolio",
+      "Markowitz",
+      "optimization",
+      "risk minimization",
+      "finance"
+    ],
+    "data_format": {
+      "instance_file": {
+        "format": "A text file with the following format: The first line contains the expected profit (as a percentage). The third line contains the number of stocks. The next n lines (where n is the number of stocks) contain n numbers each representing the covariance matrix. The last line contains n numbers representing the expected return (variation) for each stock."
+      }
+    },
+    "decision_variables": {
+      "portfolio": {
+        "type": "list of float",
+        "description": "A list of proportions (floats between 0 and 1) for each stock, summing to 1, representing the fraction of the portfolio invested in that stock."
+      }
+    },
+    "objective": {
+      "type": "minimization",
+      "function": "Risk = sum_{s,t} x_s * x_t * sigma[s][t]",
+      "description": "Minimize the portfolio risk subject to the constraints that the entire portfolio is invested (the proportions sum to 1) and that the portfolio return (sum of x_s * delta[s]) is at least the expected profit."
+    },
+    "solution_representation": "A dictionary with key 'portfolio' mapping to a list of floats representing the proportion invested in each stock.",
+    "compatible_optimizers": [
+      "genetic_algorithm",
+      "simulated_annealing",
+      "particle_swarm",
+      "tabu_search"
+    ]
+  }
+  
