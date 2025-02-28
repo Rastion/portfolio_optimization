@@ -3,14 +3,17 @@
     "default_params": {
       "instance_file": "instances/small_01.txt"
     },
-    "problem_type": "Portfolio Optimization",
+    "creator": "Rastion",
+    "type": "problem",
+    "problem_name": "Portfolio optimization problem",
     "description": "This portfolio optimization problem is a simplified version of the Markowitz portfolio selection model. Given a set of stocks with a known covariance (risk) matrix and expected returns, the goal is to decide what proportion of a unit portfolio to invest in each stock. The entire portfolio must be allocated (i.e., the proportions sum to 1), and the overall portfolio profit must be at least a specified expected profit. The objective is to minimize the portfolio risk, computed as the quadratic form x^T Σ x.",
+    "link_to_dataset": "https://github.com/Rastion/portfolio_optimization/blob/main/instances/small_01.txt",
     "keywords": [
       "portfolio",
       "Markowitz",
       "optimization",
       "risk minimization",
-      "finance"
+      "financial"
     ],
     "data_format": {
       "instance_file": {
@@ -29,11 +32,8 @@
       "description": "Minimize the portfolio risk subject to the constraints that the entire portfolio is invested (the proportions sum to 1) and that the portfolio return (sum of x_s * delta[s]) is at least the expected profit."
     },
     "solution_representation": "A dictionary with key 'portfolio' mapping to a list of floats representing the proportion invested in each stock.",
-    "compatible_optimizers": [
-      "genetic_algorithm",
-      "simulated_annealing",
-      "particle_swarm",
-      "tabu_search"
+    "formulations": [
+      ""
     ]
   }
   
